@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HARR-NET | UAV Human Activity Recognition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --primary-blue: #234c9f;
+            --light-blue: #2f66c5;
+            --bg-gray: #f7f9fc;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .tag-box {
+            border: 2px solid var(--primary-blue);
+            display: inline-block;
+            padding: 6px 18px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin: 0 auto 20px;
+            border-radius: 6px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .authors {
+            color: var(--primary-blue);
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .affiliations {
+            color: var(--primary-blue);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons */
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background: var(--primary-blue);
+            color: white;
+            padding: 14px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            min-width: 180px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .note {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            margin-top: 50px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        img.method-img {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 15px;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px 0;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        a {
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- TITLE -->
+    <h1>HARR-NET: A Novel Silhouette-Aware Fusion Method Using HSE-Net for Reliable UAV Human Activity Recognition</h1>
+
+    <div class="center">
+        <div class="tag-box">HITE 2025</div>
+    </div>
+
+    <div class="center authors">
+        Harris Shahid<sup>1</sup>, Shaheryar Najam<sup>2</sup>, Ahmad Jalal<sup>3</sup>
+    </div>
+
+    <div class="center affiliations">
+        <sup>1</sup> Riphah International University,
+        <sup>2</sup> Bahria University,
+        <sup>3</sup> Air University
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="button-row">
+        <a class="btn disabled">📄 Paper (Coming soon)</a>
+        <a class="btn" href="https://www.researchgate.net/publication/397411243_HARR-NET_A_Novel_Silhouette-Aware_Fusion_Method_Using_HSE-Net_for_Reliable_UAV_Human_Activity_Recognition" target="_blank">🔗 ResearchGate</a>
+        <a class="btn disabled">💻 Code</a>
+        <a class="btn" href="https://www.nec-labs.com/research/media-analytics/projects/unsupervised-semi-supervised-domain-adaptation-for-action-recognition-from-drones/" target="_blank">📂 Dataset</a>
+        <a class="btn" href="#citation">📑 BibTeX</a>
+    </div>
+
+    <div class="note">
+        Note: Supplementary materials are available in the ResearchGate version.
+    </div>
+
+    <!-- ABSTRACT -->
+    <h2>Abstract</h2>
+    <p>
+        Unmanned aerial vehicles (UAVs) are increasingly employed for human activity recognition (HAR) in surveillance and emergency response, yet aerial perspectives introduce challenges such as small-scale human silhouettes, occlusions, motion blur, and unreliable pose estimation that limit the effectiveness of end-to-end deep learning models. In this work, we have presented HARR-Net, a fusion-driven framework that is aimed at capturing complementary cues to scale, orientation, and background variations by combining deep and handcrafted representations. Our pipeline integrates a lightweight Human Silhouette Extraction Network (HSE-Net) for clutter-free structural cues, Part Affinity Fields for pose, spectral residual saliency for attention refinement, Hessian-based ridge encoding for structural detail, and a handcrafted Spider Local Image Feature (SLIF) descriptor for fine-grained spatial patterns. These multi-modal features are optimized by Particle Swarm Optimization and classified by a Graph Neural Network, with accuracies of 83.6% on NEC-Drone and 88.3% on MOD20. These results outperform the state-of-the-art performance of end-to-end methods. These results show that fusion-based approaches are more resilient to the challenges introduced by an aerial viewpoint and therefore prove to be the most reliable solution for UAV-based HAR.
+    </p>
+
+    <!-- METHOD -->
+    <h2>Method</h2>
+    <img src="Conference3-Page-1.drawio.png" alt="HARR-Net Methodology" class="method-img">
+
+    <p>
+        The proposed system HARR-Net represents a silhouette-driven multi-feature framework for drone-based human action recognition. It commences with the preprocessing steps, which involve duplicate removal, resizing, and normalization in order to provide uniform representation for the data. It then proceeds to introduce a new HSE-Net to generate accurate silhouette masks from RGB frames by strongly suppressing background noise. From these silhouettes, the multitask learning of multi-person pose estimation with 15 anatomical keypoints captures the kinematic features, and complementary descriptors such as saliency maps, body ridge encoding, and SLIF accentuate unique visual, structural, and topological patterns. These multimodal representations are then fused to provide a robust grounding for human action classification, as illustrated in Fig.
+    </p>
+
+    <!-- RESULTS -->
+    <h2>Results</h2>
+
+    <table>
+        <tr>
+            <th>Dataset</th>
+            <th>Methods</th>
+            <th>Classification Accuracy (%)</th>
+        </tr>
+        <tr><td rowspan="6">NEC-Drone</td><td>Kothandaraman et al.</td><td>71.46</td></tr>
+        <tr><td>Kothandaraman et al.</td><td>80.75</td></tr>
+        <tr><td>Xian et al.</td><td>78.6</td></tr>
+        <tr><td>Xian et al.</td><td>81.7</td></tr>
+        <tr><td>Sacilotti et al.</td><td>74.8</td></tr>
+        <tr><td><b>Proposed Method</b></td><td><b>83.6</b></td></tr>
+        <tr><td rowspan="4">MOD20</td><td>Khan et al.</td><td>74.0</td></tr>
+        <tr><td>Vrskova et al.</td><td>78.21</td></tr>
+        <tr><td>Dhiman et al.</td><td>86.13</td></tr>
+        <tr><td><b>Proposed Method</b></td><td><b>88.3</b></td></tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Dataset</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1-Score (Avg ± Std)</th>
+        </tr>
+        <tr>
+            <td>NEC-DRONE</td>
+            <td>0.73 ± 0.22</td>
+            <td>0.74 ± 0.20</td>
+            <td>0.74 ± 0.21</td>
+        </tr>
+        <tr>
+            <td>MOD20</td>
+            <td>0.69 ± 0.24</td>
+            <td>0.71 ± 0.23</td>
+            <td>0.71 ± 0.24</td>
+        </tr>
+    </table>
+
+    <p>
+        As shown in Table 2, our approach achieves an average F1 score of 0.74 ± 0.21 on NEC Drone, which is indicative of its robustness to category level variation. Compared with previous approaches in Table 1, our framework reaches an accuracy of 83.6%, outperforming that of previous approaches such as Kothandaraman et al. (71.46%, 80.75%), Xian et al. (78.6%, 81.7%) and Sacilotti et al. (74.8%). The MOD20 dataset evaluation results show that the framework achieves an average F1 score of 0.71 ± 0.24 and an overall accuracy of 88.3%. The framework achieves better performance results than the previous methods Khan et al. and Vrskova et al. and Dhiman et al. The system demonstrates strong performance in both controlled and uncontrolled aerial HAR environments.
+    </p>
+
+    <!-- DATASETS -->
+    <h2>Datasets</h2>
+    <ul>
+        <li><a href="https://www.nec-labs.com/research/media-analytics/projects/unsupervised-semi-supervised-domain-adaptation-for-action-recognition-from-drones/" target="_blank">NEC-Drone Dataset</a></li>
+        <li><a href="https://asankagp.github.io/mod20/" target="_blank">MOD20 Dataset</a></li>
+    </ul>
+
+    <p>
+        This study utilized the NEC-Drone dataset [75], which includes 5,250 video clips captured in a school gym, where 19 actors performed 16 predefined actions. We also used the MOD20 dataset [76], containing 2,324 video clips across 20 action classes.
+    </p>
+
+    <!-- CITATION -->
+    <h2 id="citation">Citation</h2>
+    <p>
+        Shahid, H., Najam, S., & Jalal, A. (2025). <i>HARR-NET: A Novel Silhouette-Aware Fusion Method Using HSE-Net for Reliable UAV Human Activity Recognition.</i>
+    </p>
+
+    <!-- CONTACT -->
+    <h2>Contact</h2>
+    <p>
+        For questions about this work, please contact:<br>
+        <b>harrisshahid.m@gmail.com</b>
+    </p>
+
+    <footer>
+        © 2026. All rights reserved.
+    </footer>
+
+</div>
+
+</body>
+</html>
